@@ -1,5 +1,6 @@
 const path = require('path')
 const express = require('express')
+    //Mustache handle bar
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
@@ -12,8 +13,10 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
-//setup Handlebars Engine and location
-app.set('view engine', 'hbs')
+//setup View Engine 
+app.set('view engine', 'hbs');
+
+//setup locations
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
@@ -23,21 +26,19 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Nitin Kumar'
     })
 })
 
+//Making some keys(search bars) for the website
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About',
-        name: 'Nitin Kumar'
     })
 })
 app.get('/help', (req, res) => {
     res.render('help', {
         helptext: 'This is Help Page.',
         title: 'Help',
-        name: 'Nitin Kumar'
     })
 })
 app.get('/weather', (req, res) => {
@@ -47,6 +48,8 @@ app.get('/weather', (req, res) => {
         })
     }
 
+
+    //Working on geocode and forecast
     geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
         if (error) {
             return res.send({ error: error })
@@ -64,10 +67,10 @@ app.get('/weather', (req, res) => {
     })
 })
 
+//Error handling
 app.get('/help/*', (req, res) => {
     res.render('404', {
         title: '404',
-        name: 'Nitin Kumar',
         errorMessage: 'Help is not found.'
     })
 })
@@ -75,11 +78,11 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404',
-        name: 'Nitin Kumar',
         errorMessage: 'Page not found.'
     })
 })
 
+//Server listening
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
 })
