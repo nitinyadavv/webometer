@@ -6,6 +6,8 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+
+//making port dynamic for heroku and if it is not avail then use 300
 const port = process.env.PORT || 3000
 
 //define paths for Express Config.
