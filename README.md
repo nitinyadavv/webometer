@@ -4,9 +4,7 @@ Tech Used:-HTML,CSS,Javascript,Node.js
 Website:-http://webometer.herokuapp.com/
 
 Demo Images:-
-![Screenshot (283)](https://user-images.githubusercontent.com/45096814/124349180-9788ad80-dc0b-11eb-8e59-c298e798911c.png)
 ![Screenshot (284)](https://user-images.githubusercontent.com/45096814/124349221-ba1ac680-dc0b-11eb-9bc9-8d7264eb85c0.png)
 ![Screenshot (285)](https://user-images.githubusercontent.com/45096814/124349234-c99a0f80-dc0b-11eb-96b8-dee37e75a63c.png)
-![Screenshot (286)](https://user-images.githubusercontent.com/45096814/124349251-d74f9500-dc0b-11eb-9ec4-19d1e764b7aa.png)
 ![Screenshot (287)](https://user-images.githubusercontent.com/45096814/124349258-dd457600-dc0b-11eb-9b34-a8b1ee6a07dc.png)
 
